@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<h1>Listing competence</h1>
 
-<h1>Competences</h1>
-
-<table>
+<table class='table'>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Ancestry</th>
-      <th colspan="3"></th>
+      <th>Name</th>
+      <th>Parent</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @competences.each do |competence| %>
-      <tr>
-        <td><%= competence.title %></td>
-        <td><%= competence.ancestry %></td>
-        <td><%= link_to 'Show', competence %></td>
-        <td><%= link_to 'Edit', edit_competence_path(competence) %></td>
-        <td><%= link_to 'Destroy', competence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= competence.title %></td>
+      <td><%= competence.parent ? category.parent.title : '---' %></td>
+      <td><%= link_to 'Show', competence %></td>
+      <td><%= link_to 'Edit', edit_competence_path(competence) %></td>
+      <td><%= link_to 'Destroy', competence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br />
 
 <%= link_to 'New Competence', new_competence_path %>

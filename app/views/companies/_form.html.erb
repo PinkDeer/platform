@@ -29,9 +29,14 @@
   <div class="field">
     <%= form.label :people %>
     <%= form.number_field :people, id: :company_people %>
+  </div> prompt: "Competence"
+
+  <div>
+    <%= form.select(:competence_ids, nested_dropdown(Competence.all.arrange), prompt: "Competence", selected: @competence ) %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

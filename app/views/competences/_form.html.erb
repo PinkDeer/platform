@@ -1,8 +1,13 @@
 <%= simple_form_for(@competence) do |f| %>
   <%= f.error_notification %>
 
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
   <div class="form-inputs">
-    <%= f.input :title %>
+    <%= f.label :parent_id %>
     <%= f.collection_select :parent_id, Competence.order(:title), :id, :title, include_blank: true %>
   </div>
 

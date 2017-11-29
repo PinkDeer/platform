@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127193122) do
+ActiveRecord::Schema.define(version: 20171128145311) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20171127193122) do
 
   create_table "competences", force: :cascade do |t|
     t.string "title"
-    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
     t.index ["ancestry"], name: "index_competences_on_ancestry"
   end
 
